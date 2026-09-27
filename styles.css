@@ -5,7 +5,7 @@
   --accent-soft: #e7f4ef;
   --ink: #1b2430;
   --ink-soft: #4a5568;
-  --muted: #718096;
+  --muted: #5b6b7e;
   --bg: #ffffff;
   --bg-alt: #f7faf9;
   --border: #e2e8f0;
@@ -34,6 +34,11 @@ img, svg { max-width: 100%; }
 
 a { color: var(--accent-dark); text-decoration: none; }
 a:hover { text-decoration: underline; }
+a:focus-visible, button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
 
 h1, h2, h3 { line-height: 1.25; color: var(--ink); margin: 1.6em 0 .5em; }
 h1 { font-size: 2.1rem; letter-spacing: -0.01em; margin-top: .4em; }
@@ -145,6 +150,8 @@ p { margin: 0 0 1.1em; }
 .card-art.variant-3 { background: linear-gradient(135deg, #0e7a5f, #2f9e7a); }
 .card-art.variant-4 { background: linear-gradient(135deg, #0a4d3e, #146b56); }
 .card-art.variant-5 { background: linear-gradient(135deg, #1f6f5b, #3ba37f); }
+.card-art.variant-1 { background: linear-gradient(135deg, #0b6e8c, #149a8c); }
+.card-art.variant-6 { background: linear-gradient(135deg, #1e4d6b, #3b9e8f); }
 .card-body { padding: 1.25rem; display: flex; flex-direction: column; flex: 1; }
 .card-body .pillar { font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--accent-dark); margin-bottom: .45rem; }
 .card-body p.excerpt { color: var(--ink-soft); font-size: .98rem; flex: 1; }
@@ -237,6 +244,6 @@ tr:hover td { background: #fafcfb; }
   .main-nav a { display: block; padding: .75rem .25rem; }
   .site-header .wrap { flex-wrap: wrap; }
   .hero h1 { font-size: 2.1rem; }
-  table { font-size: .85rem; }
+  table { font-size: .85rem; display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
   th, td { padding: .5rem .55rem; }
 }
