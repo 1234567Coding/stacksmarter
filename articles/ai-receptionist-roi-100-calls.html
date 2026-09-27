@@ -3,6 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <script>
+    /* Set theme before first paint; defaults to OS preference. */
+    (function () {
+      try {
+        var t = localStorage.getItem("ss-theme");
+        if (!t) t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) { /* private mode etc. -> stay light */ }
+    })();
+  </script>
   <link rel="canonical" href="https://ai-tools-small-biz.pages.dev/articles/ai-receptionist-roi-100-calls.html">
   <!-- MEDIVAVINE/JOURNEY: paste ad network script here -->
   <title>AI Receptionist ROI: What 100 After-Hours Calls a Month Is Really Worth | StackSmarter</title>
@@ -17,6 +28,9 @@
     <div class="wrap">
       <a class="brand" href="../index.html"><span class="brand-mark">S</span><span>StackSmarter<small>AI that pays for itself.</small></span></a>
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <span class="theme-icon" aria-hidden="true">☾</span>
+      </button>
       <nav class="main-nav" aria-label="Main navigation">
         <ul>
           <li><a href="../index.html">Home</a></li>
@@ -24,6 +38,11 @@
           <li><a href="ai-receptionist-roi-100-calls.html">ROI Math</a></li>
           <li><a href="after-hours-lead-machine.html">Workflows</a></li>
           <li><a href="../disclosure.html">Disclosure</a></li>
+          <li class="nav-search"><form class="site-search" role="search" aria-label="Site search">
+            <label class="visually-hidden" for="site-search-input">Search articles</label>
+            <input id="site-search-input" type="search" name="q" placeholder="Search articles…" autocomplete="off" aria-expanded="false" aria-controls="site-search-results">
+            <ul id="site-search-results" class="search-results" hidden></ul>
+          </form></li>
         </ul>
       </nav>
     </div>
@@ -145,16 +164,6 @@
       <p>© 2026 StackSmarter. Some links on this site are affiliate links — we may earn a commission at no extra cost to you. See our <a href="../disclosure.html">affiliate disclosure</a>.</p>
     </div>
   </footer>
-  <script>
-    (function () {
-      var btn = document.querySelector('.nav-toggle');
-      var nav = document.querySelector('.main-nav');
-      if (!btn || !nav) return;
-      btn.addEventListener('click', function () {
-        var open = nav.classList.toggle('open');
-        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-      });
-    })();
-  </script>
+  <script src="../assets/site.js" defer></script>
 </body>
 </html>
